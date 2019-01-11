@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="44882" started-at="2019-01-11T11:57:11Z" finished-at="2019-01-11T11:57:56Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="44882" started-at="2019-01-11T11:57:11Z" finished-at="2019-01-11T11:57:56Z">
+      <class name="com.training.sanity.tests.DeleteReturnOrderTests">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.sanity.tests.DeleteReturnOrderTests@51565ec2]" name="setUpBeforeClass" is-config="true" duration-ms="34748" started-at="2019-01-11T17:27:11Z" finished-at="2019-01-11T17:27:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpBeforeClass -->
+        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.sanity.tests.DeleteReturnOrderTests@51565ec2]" name="validLoginTest" duration-ms="3314" started-at="2019-01-11T17:27:46Z" finished-at="2019-01-11T17:27:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLoginTest -->
+        <test-method status="PASS" signature="validDeleteReturnOrder()[pri:2, instance:com.training.sanity.tests.DeleteReturnOrderTests@51565ec2]" name="validDeleteReturnOrder" duration-ms="4898" started-at="2019-01-11T17:27:49Z" finished-at="2019-01-11T17:27:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validDeleteReturnOrder -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.sanity.tests.DeleteReturnOrderTests@51565ec2]" name="tearDown" is-config="true" duration-ms="1881" started-at="2019-01-11T17:27:54Z" finished-at="2019-01-11T17:27:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.training.sanity.tests.DeleteReturnOrderTests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
