@@ -44,33 +44,40 @@ public class ReturnOrderTests {
 		driver.get(baseUrl);
 	}
   
+  //This test is to validate the login 
   @Test (priority = 1)
 	public void validLoginTest() {
 	  filterReturnListPOM.sendUserName("admin");
 	  filterReturnListPOM.sendPassword("admin@123");
 	  filterReturnListPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("ReturnOrderTests_1");
 	}
   
+  /* Test case ID: RTTC_018
+   * Description: This test is to validate the Return order details by performing the Filter by ReturnID and filter by Customer name
+  */
   @Test (priority = 2)
 	public void validOrderDetails() throws InterruptedException {
 		Thread.sleep(2000);
+		////Filter by ReturnID and verifying the list
 		filterReturnListPOM.clickSaleMenu();
 		filterReturnListPOM.clickReturns();
 		filterReturnListPOM.sendReturnID("25");
 		filterReturnListPOM.filterBtn();
-		screenShot.captureScreenShot("Second");
+		screenShot.captureScreenShot("ReturnOrderTests_2");
 		String resreturnID = filterReturnListPOM.rowtext.getText();
 		System.out.println(" Fetched from Returnid:" +resreturnID);
 		boolean expected = true;
 		boolean actual = filterReturnListPOM.verifyreturnID(resreturnID);
 		assertEquals(actual, expected);
+		//Filter by Customer name and verifying the order list
 		filterReturnListPOM.returnID.clear();
 		filterReturnListPOM.sendretCustomerName("subhashini rangaraju");
 		filterReturnListPOM.filterBtn(); 
-		//filterOrderDetails.verifytable();
-		screenShot.captureScreenShot("Third");
+		screenShot.captureScreenShot("ReturnOrderTests_3");
+		//This list is to fetch the return order details after clicking on filter button
 		List<WebElement> rows = filterReturnListPOM.table.findElements(By.tagName("tr"));
+		//Looping the list to fetch Return Order details for multiple rows
 		for(WebElement tdata: rows)
 		{
 			String rowdata = tdata.getText();

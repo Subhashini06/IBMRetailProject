@@ -45,23 +45,30 @@ public class FilterCustomerListTests {
 		driver.get(baseUrl);
 	}
   
+  //This test is to validate the login 
   @Test (priority = 1)
 	public void validLoginTest() {
 	  filterCustomerListPOM.sendUserName("admin");
 	  filterCustomerListPOM.sendPassword("admin@123");
 	  filterCustomerListPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("FilterCustomerListTests_1");
 	}
 
+  /* Test case ID: RTTC_020
+   * Description: This test is to validate the Customer details by performing the Filter by Customer name and filter by Email
+  */
 	@Test (priority = 2)
 	public void validOrderDetails() throws InterruptedException {
 		Thread.sleep(2000);
+		//Fetching the customer details by Customer name
 		filterCustomerListPOM.clickCustomerMenu();
 		filterCustomerListPOM.clickCustomers();
 		filterCustomerListPOM.sendCustomerName("subhashini rangaraju");
 		filterCustomerListPOM.filterBtn();
-		screenShot.captureScreenShot("Second");
+		screenShot.captureScreenShot("FilterCustomerListTests_2");
+		//This list is to fetch the customer details after clicking on filter button
 		List<WebElement> rows = filterCustomerListPOM.table.findElements(By.tagName("tr"));
+		//Looping the list to fetch customer details for multiple rows
 		for(WebElement tdata: rows)
 		{
 			String rowdata = tdata.getText();
@@ -71,11 +78,11 @@ public class FilterCustomerListTests {
 			assertEquals(actual1, expected1);
 		}
 		
-		//Fetching the customer list by Email
+		//Fetching the customer details by Email
 		filterCustomerListPOM.customerName.clear();
 		filterCustomerListPOM.sendEmail("a@yahoo.com");
 		filterCustomerListPOM.filterBtn(); 
-		screenShot.captureScreenShot("Third");
+		screenShot.captureScreenShot("FilterCustomerListTests_3");
 		String resEmail = filterCustomerListPOM.rowtext.getText();
 		System.out.println("Fetched from Email" +resEmail);
 		boolean expected1 = true;

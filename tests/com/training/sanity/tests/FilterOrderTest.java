@@ -38,22 +38,27 @@ public class FilterOrderTest {
 		driver.get(baseUrl);
 	}
 	
+	//This test is to validate the login 
 	@Test (priority = 1)
 	public void validLoginTest() {
 		filterOrderDetails.sendUserName("admin");
 		filterOrderDetails.sendPassword("admin@123");
 		filterOrderDetails.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("FirstOrderTest_1");
 	}
 
+	/* Test case ID: RTTC_016
+	   * Description: This test is to validate the Order details by performing the Filter by OrderID and filter by Customer name
+	  */
 	@Test (priority = 2)
 	public void validOrderDetails() throws InterruptedException {
 		Thread.sleep(2000);
+		//Filter by OrderID and verifying the order list
 		filterOrderDetails.clickSaleMenu();
 		filterOrderDetails.clickOrdersItem();
 		filterOrderDetails.sendOrderID("148");
 		filterOrderDetails.filterBtn();
-		screenShot.captureScreenShot("Second");
+		screenShot.captureScreenShot("FirstOrderTest_2");
 		String resOrderID = filterOrderDetails.rowtext.getText();
 		System.out.println("Fetched from orderid:" +resOrderID);
 		boolean expected = true;
@@ -63,8 +68,10 @@ public class FilterOrderTest {
 		filterOrderDetails.orderID.clear();
 		filterOrderDetails.sendCustomerName("subhashini rangaraju");
 		filterOrderDetails.filterBtn(); 
-		screenShot.captureScreenShot("Third");
+		screenShot.captureScreenShot("FirstOrderTest_3");
+		//This list is to fetch the order details after clicking on filter button
 		List<WebElement> rows = filterOrderDetails.table.findElements(By.tagName("tr"));
+		//Looping the list to fetch Order details for multiple rows
 		for(WebElement tdata: rows)
 		{
 			String rowdata = tdata.getText();

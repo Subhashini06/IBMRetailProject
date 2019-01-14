@@ -43,20 +43,24 @@ public class DeleteOrderTests {
 		driver.get(baseUrl);
 	}
   
+  //This test is to validate the login
   @Test (priority = 1)
 	public void validLoginTest() {
 	  	deleteOrderPOM.sendUserName("admin");
 	  	deleteOrderPOM.sendPassword("admin@123");
 	  	deleteOrderPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+		screenShot.captureScreenShot("DeleteOrderTests_1");
 	}
   
+  /* Test case ID: RTTC_017
+   * Description: This test is to delete the order 
+  */
   @Test (priority = 2)
   public void validDeleteOrder() throws InterruptedException {
 	  	Thread.sleep(2000);
 	  	deleteOrderPOM.clickSaleMenu();
 	  	deleteOrderPOM.clickOrdersItem();
-	  	screenShot.captureScreenShot("Second");
+	  	screenShot.captureScreenShot("DeleteOrderTests_2");
 		deleteOrderPOM.tablerowcheckbox();
 		Thread.sleep(1000);
 		deleteOrderPOM.deleteBtn();
