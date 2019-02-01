@@ -59,8 +59,8 @@ public class ChangeOrderTests {
 			changeOrderPOM.clicktabCustomerContinueBtn();
 			//Click on Remove button in the product table
 			changeOrderPOM.clicktabCartRemoveBtn();
-			//Choose product, enter the Quantity and click on Add button 
-			changeOrderPOM.sendtabCartProductName("Diamond necklace");
+			//Choose product, enter the Quantity an\d click on Add button 
+			changeOrderPOM.sendtabCartProductName("Samsung");
 			changeOrderPOM.selectProductName();
 			Thread.sleep(2000);
 			changeOrderPOM.sendtabCartProductQty("1");

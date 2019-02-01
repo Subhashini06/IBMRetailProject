@@ -3,6 +3,7 @@ package com.training.bean;
 public class LoginBean {
 	private String userName;
 	private String password;
+	
 
 	public LoginBean() {
 	}
@@ -33,5 +34,8 @@ public class LoginBean {
 	public String toString() {
 		return "LoginBean [userName=" + userName + ", password=" + password + "]";
 	}
+	
+	
+	
 
 }

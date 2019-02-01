@@ -57,10 +57,10 @@ private WebDriver driver;
 	@FindBy(id ="button-filter")
 	private WebElement filterBtn; 
 	
-	@FindBy(xpath = "//*[@id=\"form-order\"]/div/table/tbody")
+	@FindBy(xpath = "//table/tbody")
 	public WebElement table;
 	
-	@FindBy(xpath = "//*[@id=\"form-order\"]/div/table/tbody/tr")
+	@FindBy(xpath = "//table/tbody/tr")
 	public WebElement rowtext;
 	
 	public void clickSaleMenu() {

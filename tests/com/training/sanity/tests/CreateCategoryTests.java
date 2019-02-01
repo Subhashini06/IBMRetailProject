@@ -79,7 +79,7 @@ public class CreateCategoryTests {
 	}
 
 	//This test is to create product
-	@Test(priority = 2)
+	@Test(priority = 3)
 	public void validCreateProductTest() throws InterruptedException {
 		createCategoryPOM.clickCategoryMenu();
 		createCategoryPOM.clickProductSubMenu();

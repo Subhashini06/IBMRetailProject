@@ -64,7 +64,7 @@ public class ChangeOrderPOM {
 	@FindBy(id = "input-product")
 	private WebElement tabCartProductName;
 	
-	@FindBy(xpath = "//a[contains(text(),'Diamond necklace')]")
+	@FindBy(xpath = "//div[@id='tab-product']/fieldset/div/div/ul/li/a")
 	private WebElement selectTextProductName;
 	
 	@FindBy(id = "input-quantity")
@@ -191,7 +191,7 @@ public class ChangeOrderPOM {
 	public boolean verifyProductTable(String s)
 	{
 		String s1;
-		s1 = "Diamond necklace";
+		s1 = "Samsung";
 		if(s.contains(s1))	
 			return true;
 			else
